@@ -1,1 +1,1 @@
-Link : gabrielgpdb.github.io/RECEITA-BOLO/
+Link : https://gabrielgpdb.github.io/RECEITA-BOLO/
