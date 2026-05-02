@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@400;500&display=swap');
+
+/* Reset básico e configuração global do box model */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --cor-fundo: #f9f8f6;
+  --cor-superficie: #fffaf3;
+  --cor-texto: #2f2a27;
+  --cor-destaque: #e67e22;
+  --cor-chocolate: #5d4037;
+  --cor-borda: #e8ddd2;
+  --cor-suave: #f4e1cf;
+  --cor-comprado: #e9f7ef;
+  --sombra: 0 10px 30px rgba(93, 64, 55, 0.12);
+}
+
+/* Tema claro padrão */
+body.tema-claro {
+  --cor-fundo: #f9f8f6;
+  --cor-superficie: #fffaf3;
+  --cor-texto: #2f2a27;
+  --cor-borda: #e8ddd2;
+  --cor-suave: #f4e1cf;
+}
+
+/* Tema escuro para alternância visual */
+body.tema-escuro {
+  --cor-fundo: #2a211d;
+  --cor-superficie: #3a2d28;
+  --cor-texto: #f8f1ea;
+  --cor-borda: #6d544b;
+  --cor-suave: #4a3a34;
+  --sombra: 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
+/* Estilo geral da página */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(100% - 2rem, 960px);
+  margin: 0 auto;
+}
+
+/* Cabeçalho principal */
+.cabecalho {
+  background: linear-gradient(135deg, #fff2df, #f7d6b2);
+  padding: 3rem 0 2rem;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.subtitulo {
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+  color: var(--cor-chocolate);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  color: var(--cor-destaque);
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.8rem;
+  color: var(--cor-chocolate);
+}
+
+.descricao {
+  max-width: 680px;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+}
+
+/* Seções principais da receita */
+.secao {
+  background-color: var(--cor-superficie);
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 18px;
+  box-shadow: var(--sombra);
+}
+
+.destaque {
+  margin-top: 2rem;
+}
+
+.imagem-receita {
+  border-radius: 16px;
+  margin-bottom: 1.25rem;
+  object-fit: cover;
+}
+
+/* Seção de ações e botões */
+.acoes-topo {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+#btn-bom-apetite,
+#btn-tema {
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#btn-bom-apetite {
+  background-color: var(--cor-destaque);
+  color: #ffffff;
+}
+
+#btn-tema {
+  background-color: var(--cor-chocolate);
+  color: #ffffff;
+}
+
+#btn-bom-apetite:hover,
+#btn-tema:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.contador {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Listas com espaçamento confortável */
+.lista-ingredientes,
+.lista-preparo {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.lista-ingredientes li,
+.lista-preparo li {
+  margin-bottom: 0.8rem;
+}
+
+.lista-ingredientes li {
+  padding: 0.55rem 0.7rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.lista-ingredientes li:hover {
+  background-color: var(--cor-suave);
+}
+
+/* Classe aplicada via JavaScript para ingredientes comprados */
+.comprado {
+  text-decoration: line-through;
+  background-color: var(--cor-comprado);
+  opacity: 0.85;
+}
+
+/* Rodapé */
+.rodape {
+  padding: 1rem 0 2rem;
+  text-align: center;
+  color: var(--cor-chocolate);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .cabecalho {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .secao {
+    padding: 1.15rem;
+    margin: 1rem 0;
+  }
+
+  .acoes-topo {
+    flex-direction: column;
+  }
+
+  #btn-bom-apetite,
+  #btn-tema {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100% - 1rem, 960px);
+  }
+
+  .cabecalho {
+    padding: 1.5rem 0 1rem;
+  }
+
+  .descricao,
+  .contador,
+  .lista-ingredientes li,
+  .lista-preparo li {
+    font-size: 0.96rem;
+  }
+}
