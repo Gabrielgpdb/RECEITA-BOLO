@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bolo de Cenoura com Cobertura de Chocolate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="tema-claro">
+
+  <!-- ═══ BARRA DE FERRAMENTAS TOPO ═══ -->
+  <div class="toolbar no-print">
+    <div class="toolbar-left">
+      <span class="visitas-wrap">👁 <span id="visitas">0</span> visualizações</span>
+    </div>
+    <div class="toolbar-right">
+      <button id="btn-tema">🌙 Tema Escuro</button>
+      <button id="btn-imprimir" onclick="window.print()">🖨️ Imprimir</button>
+    </div>
+  </div>
+
+  <!-- ═══ CABEÇALHO ═══ -->
+  <header>
+    <p class="header-badge">Receita Clássica Brasileira</p>
+    <h1>Bolo de Cenoura com <em>Cobertura de Chocolate</em></h1>
+    <p class="subtitulo">Macio por dentro, irresistível por fora. O favorito de todo fim de tarde.</p>
+  </header>
+
+  <!-- ═══ IMAGEM PRINCIPAL ═══ -->
+  <div class="hero-img-wrap">
+    <img
+      src="bolo-cenoura.jpg"
+      alt="Bolo de cenoura com cobertura de chocolate escorrendo pelas laterais, decorado com cenouras em cima"
+    />
+  </div>
+
+  <!-- ═══ BARRA DE INFORMAÇÕES ═══ -->
+  <div class="info-bar">
+    <div class="info-item">
+      <span class="label">Rendimento</span>
+      <span class="valor">12 fatias</span>
+    </div>
+    <div class="info-item">
+      <span class="label">Preparo</span>
+      <span class="valor">20 min</span>
+    </div>
+    <div class="info-item">
+      <span class="label">Forno</span>
+      <span class="valor">40 min</span>
+    </div>
+    <div class="info-item">
+      <span class="label">Dificuldade</span>
+      <span class="valor">Fácil</span>
+    </div>
+  </div>
+
+  <!-- ═══ CONTEÚDO PRINCIPAL ═══ -->
+  <main>
+
+    <!-- ── AVALIAÇÃO POR ESTRELAS ── -->
+    <section class="card-bolo no-print">
+      <h2>⭐ Avalie esta Receita</h2>
+      <div class="estrelas-wrap">
+        <div class="estrelas" id="estrelas">
+          <span class="estrela" data-val="1">★</span>
+          <span class="estrela" data-val="2">★</span>
+          <span class="estrela" data-val="3">★</span>
+          <span class="estrela" data-val="4">★</span>
+          <span class="estrela" data-val="5">★</span>
+        </div>
+        <p class="media-texto" id="media-texto">Sem avaliações ainda. Clique para avaliar!</p>
+      </div>
+    </section>
+
+    <!-- ── SELETOR DE PORÇÕES ── -->
+    <section class="card-bolo no-print">
+      <h2>🍽️ Ajustar Porções</h2>
+      <div class="porcoes-wrap">
+        <div class="porcoes-botoes">
+          <button class="btn-porcao" data-fator="0.5">2 fatias</button>
+          <button class="btn-porcao ativo" data-fator="1">4 fatias</button>
+          <button class="btn-porcao" data-fator="1.5">6 fatias</button>
+          <button class="btn-porcao" data-fator="2">8 fatias</button>
+        </div>
+        <div class="porcoes-custom">
+          <label for="input-pessoas">Ou digite o nº de fatias:</label>
+          <input type="number" id="input-pessoas" min="1" max="50" value="4" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INGREDIENTES DO BOLO ── -->
+    <section class="card-bolo">
+      <h2>🥕 Ingredientes — Bolo</h2>
+      <p class="hint-ingrediente no-print">💡 Clique para marcar como comprado / tem em casa</p>
+      <ul id="lista-bolo">
+        <li data-id="b1" data-qtd="3"   data-unit="cenouras médias (±300 g), descascadas e picadas">3 cenouras médias (±300 g), descascadas e picadas</li>
+        <li data-id="b2" data-qtd="3"   data-unit="ovos inteiros">3 ovos inteiros</li>
+        <li data-id="b3" data-qtd="1"   data-unit="xícara de óleo de milho">1 xícara de óleo de milho (240 ml)</li>
+        <li data-id="b4" data-qtd="2"   data-unit="xícaras de açúcar refinado">2 xícaras de açúcar refinado (360 g)</li>
+        <li data-id="b5" data-qtd="2"   data-unit="xícaras de farinha de trigo">2 xícaras de farinha de trigo (280 g)</li>
+        <li data-id="b6" data-qtd="1"   data-unit="colher de sopa de fermento em pó">1 colher de sopa de fermento em pó</li>
+        <li data-id="b7" data-qtd="1"   data-unit="pitada de sal">1 pitada de sal</li>
+      </ul>
+    </section>
+
+    <!-- ── INGREDIENTES DA COBERTURA ── -->
+    <section class="card-chocolate">
+      <h2>🍫 Ingredientes — Cobertura</h2>
+      <p class="hint-ingrediente no-print">💡 Clique para marcar como comprado / tem em casa</p>
+      <ul class="lista-chocolate" id="lista-cobertura">
+        <li data-id="c1" data-qtd="5"   data-unit="colheres de sopa de achocolatado em pó">5 colheres de sopa de achocolatado em pó (50 g)</li>
+        <li data-id="c2" data-qtd="5"   data-unit="colheres de sopa de açúcar">5 colheres de sopa de açúcar (60 g)</li>
+        <li data-id="c3" data-qtd="3"   data-unit="colheres de sopa de manteiga">3 colheres de sopa de manteiga (45 g)</li>
+        <li data-id="c4" data-qtd="0.5" data-unit="xícara de leite integral">½ xícara de leite integral (120 ml)</li>
+      </ul>
+    </section>
+
+    <!-- ── MODO DE PREPARO DO BOLO ── -->
+    <section class="card-bolo">
+      <h2>📋 Modo de Preparo — Bolo</h2>
+      <p class="hint-passo no-print">✅ Clique em cada passo para marcar como feito</p>
+      <ol id="ol-bolo">
+        <li>Pré-aqueça o forno a <strong>180 °C</strong>. Unte e enfarinhe uma forma redonda de 24 cm.</li>
+        <li>No liquidificador, bata as <strong>cenouras, os ovos e o óleo</strong> por cerca de 3 minutos, até obter um creme liso e alaranjado.</li>
+        <li>Transfira o creme para uma tigela grande. Acrescente o <strong>açúcar</strong> e misture com um fouet.</li>
+        <li>Adicione a <strong>farinha de trigo peneirada</strong> e o sal, incorporando com movimentos suaves para não sovar.</li>
+        <li>Por último, adicione o <strong>fermento em pó</strong> e misture delicadamente com uma espátula.</li>
+        <li>Despeje a massa na forma preparada e leve ao forno por <strong>35 a 40 minutos</strong>, ou até o palito sair limpo.</li>
+        <li>Retire do forno e aguarde <strong>10 minutos</strong> antes de desenformar.</li>
+      </ol>
+    </section>
+
+    <!-- ── MODO DE PREPARO DA COBERTURA ── -->
+    <section class="card-chocolate">
+      <h2>🍫 Modo de Preparo — Cobertura</h2>
+      <p class="hint-passo no-print">✅ Clique em cada passo para marcar como feito</p>
+      <ol class="ol-chocolate" id="ol-cobertura">
+        <li>Em uma panela pequena, misture o <strong>achocolatado, o açúcar e a manteiga</strong> em fogo médio.</li>
+        <li>Adicione o <strong>leite</strong> aos poucos, mexendo sempre para não empelotar.</li>
+        <li>Cozinhe por <strong>5 a 7 minutos</strong>, mexendo sem parar, até engrossar e soltar do fundo da panela.</li>
+        <li>Com o bolo ainda <strong>morno sobre o prato</strong>, despeje a calda quente por cima e deixe escorrer pelas bordas.</li>
+        <li>Aguarde a cobertura firmar levemente antes de servir. Bom apetite! ☕</li>
+      </ol>
+    </section>
+
+    <!-- ── CRONÔMETRO ── -->
+    <section class="card-bolo no-print">
+      <h2>⏱️ Cronômetro de Cozinha</h2>
+      <div class="cronometro-wrap">
+        <div class="cronometro-display" id="cronometro-display">00:00:00</div>
+        <div class="cronometro-botoes">
+          <button id="btn-iniciar" class="btn-cron btn-verde">▶ Iniciar</button>
+          <button id="btn-pausar"  class="btn-cron btn-amarelo" disabled>⏸ Pausar</button>
+          <button id="btn-zerar"   class="btn-cron btn-vermelho" disabled>⏹ Zerar</button>
+        </div>
+        <div class="presets">
+          <span class="presets-label">Atalhos rápidos:</span>
+          <button class="btn-preset" data-seg="1200">20 min (preparo)</button>
+          <button class="btn-preset" data-seg="2400">40 min (forno)</button>
+          <button class="btn-preset" data-seg="600">10 min (espera)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONVERSOR DE MEDIDAS ── -->
+    <section class="card-chocolate no-print">
+      <h2>⚖️ Conversor de Medidas</h2>
+      <div class="conversor-wrap">
+        <div class="conversor-linha">
+          <select id="conv-ingrediente">
+            <option value="acucar">Açúcar</option>
+            <option value="farinha">Farinha de trigo</option>
+            <option value="leite">Leite</option>
+            <option value="manteiga">Manteiga</option>
+            <option value="oleo">Óleo</option>
+          </select>
+          <input type="number" id="conv-qtd" value="1" min="0.1" step="0.1" />
+          <select id="conv-de">
+            <option value="xicara">Xícara (240 ml)</option>
+            <option value="colher_sopa">Colher de sopa</option>
+            <option value="colher_cha">Colher de chá</option>
+            <option value="gramas">Gramas (g)</option>
+            <option value="ml">Mililitros (ml)</option>
+          </select>
+          <span class="conv-seta">→</span>
+          <select id="conv-para">
+            <option value="gramas">Gramas (g)</option>
+            <option value="xicara">Xícara (240 ml)</option>
+            <option value="colher_sopa">Colher de sopa</option>
+            <option value="colher_cha">Colher de chá</option>
+            <option value="ml">Mililitros (ml)</option>
+          </select>
+          <button id="btn-converter">Converter</button>
+        </div>
+        <div class="conversor-resultado" id="conversor-resultado">Selecione ingrediente e unidades, depois clique em Converter.</div>
+      </div>
+    </section>
+
+    <!-- ── DICA ── -->
+    <div class="dica">
+      <span class="icone">💡</span>
+      <div>
+        <strong>Dica de Ouro</strong>
+        Para um bolo ainda mais fofinho, certifique-se de que os ovos estejam em temperatura ambiente antes de bater.
+        E nunca abra o forno antes de <strong>30 minutos</strong> de cozimento — a massa pode afundar!
+      </div>
+    </div>
+
+    <!-- ── COMENTÁRIOS ── -->
+    <section class="card-bolo no-print">
+      <h2>💬 Comentários da Comunidade</h2>
+      <div class="comentario-form">
+        <input type="text" id="com-nome" placeholder="Seu nome" maxlength="40" />
+        <textarea id="com-texto" placeholder="Deixe seu comentário sobre esta receita..." rows="3" maxlength="400"></textarea>
+        <button id="btn-comentar">Enviar comentário</button>
+      </div>
+      <ul id="lista-comentarios"></ul>
+    </section>
+
+    <!-- ── BOTÃO CAFÉ ── -->
+    <div class="btn-wrap no-print">
+      <button id="btn-apetite">☕ Preparar o café agora!</button>
+    </div>
+
+  </main>
+
+  <!-- ═══ RODAPÉ ═══ -->
+  <footer>
+    <p>Feito com <span class="coracao">♥</span> e muito chocolate — Receita da Vovó</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
